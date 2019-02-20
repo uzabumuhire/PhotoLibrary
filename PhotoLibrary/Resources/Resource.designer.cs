@@ -1909,6 +1909,9 @@ namespace PhotoLibrary
 			// aapt resource value: 0x7f0b004e
 			public const int checkbox = 2131427406;
 			
+			// aapt resource value: 0x7f0b007b
+			public const int chooseFromGallery = 2131427451;
+			
 			// aapt resource value: 0x7f0b0073
 			public const int chronometer = 2131427443;
 			
@@ -1990,8 +1993,8 @@ namespace PhotoLibrary
 			// aapt resource value: 0x7f0b006d
 			public const int media_actions = 2131427437;
 			
-			// aapt resource value: 0x7f0b007a
-			public const int message = 2131427450;
+			// aapt resource value: 0x7f0b007d
+			public const int message = 2131427453;
 			
 			// aapt resource value: 0x7f0b0023
 			public const int middle = 2131427363;
@@ -2022,6 +2025,9 @@ namespace PhotoLibrary
 			
 			// aapt resource value: 0x7f0b0040
 			public const int parentPanel = 2131427392;
+			
+			// aapt resource value: 0x7f0b007c
+			public const int photoImageView = 2131427452;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
@@ -2124,6 +2130,9 @@ namespace PhotoLibrary
 			
 			// aapt resource value: 0x7f0b000b
 			public const int tag_transition_group = 2131427339;
+			
+			// aapt resource value: 0x7f0b007a
+			public const int takePicture = 2131427450;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int text = 2131427340;
@@ -2471,8 +2480,11 @@ namespace PhotoLibrary
 			// aapt resource value: 0x7f060010
 			public const int abc_toolbar_collapse_description = 2131099664;
 			
+			// aapt resource value: 0x7f060022
+			public const int app_name = 2131099682;
+			
 			// aapt resource value: 0x7f060020
-			public const int app_name = 2131099680;
+			public const int chooseFromGallery = 2131099680;
 			
 			// aapt resource value: 0x7f06001f
 			public const int hello = 2131099679;
@@ -2482,6 +2494,9 @@ namespace PhotoLibrary
 			
 			// aapt resource value: 0x7f06001e
 			public const int status_bar_notification_info_overflow = 2131099678;
+			
+			// aapt resource value: 0x7f060021
+			public const int takePicture = 2131099681;
 			
 			static String()
 			{
