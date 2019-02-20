@@ -1,11 +1,1 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<resources>
-    <!-- A custom theme that is a variation on the light theme 
-            with a different background color. -->
-    <style name="MyCustomTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:colorPrimary">#3f51B5</item>
-        <item name="android:statusBarColor">#ffffff</item>
-        <item name="android:colorPrimaryDark">#303f9f</item>
-    </style>
-</resources>
