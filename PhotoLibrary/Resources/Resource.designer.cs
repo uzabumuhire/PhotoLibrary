@@ -3000,6 +3000,9 @@ namespace PhotoLibrary
 			// aapt resource value: 0x7f08007e
 			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131230846;
 			
+			// aapt resource value: 0x7f080162
+			public const int MyCustomTheme = 2131231074;
+			
 			// aapt resource value: 0x7f08001e
 			public const int Platform_AppCompat = 2131230750;
 			
