@@ -4,7 +4,10 @@ using Android.OS;
 
 namespace PhotoLibrary
 {
-    [Activity(Label = "PhotoLibrary", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(
+        Label = "PhotoLibrary", 
+        MainLauncher = true, 
+        Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         int count = 1;
@@ -12,6 +15,9 @@ namespace PhotoLibrary
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            // Start our PhotoLibrary Activity
+            this.StartActivity(typeof(PhotoLibraryActivity));
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);

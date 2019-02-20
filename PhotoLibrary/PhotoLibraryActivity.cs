@@ -18,9 +18,9 @@ using Plugin.Permissions.Abstractions;
 namespace PhotoLibrary
 {
     [Activity(
-        Label = "PhotoLibraryActivity", 
-        MainLauncher = true, 
-        Icon = "@mipmap/icon" )]
+        Label = "PhotoLibraryActivity",
+        MainLauncher = true,
+        Icon = "@mipmap/icon")]
     public class PhotoLibraryActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -32,8 +32,8 @@ namespace PhotoLibrary
 
             // Get our useCamera button from the layout resource,
             // and attach an event to it
-            Button useCamera = FindViewById<Button>(Resource.Id.takePicture);
-            useCamera.Click += UseCameraButton_Clicked;
+            Button takePicture = FindViewById<Button>(Resource.Id.takePicture);
+            takePicture.Click += TakePictureButton_Clicked;
 
             // Get our chooseFromGallery button from the layout resource,
             // and attach an event to it
@@ -46,13 +46,9 @@ namespace PhotoLibrary
             throw new NotImplementedException();
         }
 
-        private void UseCameraButton_Clicked(object sender, EventArgs e)
+        private void TakePictureButton_Clicked(object sender, EventArgs e)
         {
             throw new NotImplementedException();
-        }
-
-        void ChooseFromGallery_Click(object sender, EventArgs e)
-        {
         }
 
     }
