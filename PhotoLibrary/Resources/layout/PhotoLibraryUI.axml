@@ -6,21 +6,15 @@
     android:layout_height="match_parent">
     
     <Button 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:text="@string/takePicture"
-        android:id="@+id/takePicture" />
+        android:id="@+id/takePicture"
+        style="@style/TakePictureButton"/>
     
     <Button 
-        android:layout_width="match_parent" 
-        android:layout_height="wrap_content" 
-        android:text="@string/chooseFromGallery"
-        android:id="@+id/chooseFromGallery" />
+        android:id="@+id/chooseFromGallery"
+        style="@style/ChooseFromGalleryButton"/>
     
     <ImageView 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="fitXY"
-        android:id="@+id/photoImageView" />
+        android:id="@+id/photoImageView" 
+        style="@style/PhotoImageView"/>
     
 </LinearLayout>

@@ -20,7 +20,8 @@ namespace PhotoLibrary
     [Activity(
         Label = "PhotoLibraryActivity",
         MainLauncher = true,
-        Icon = "@mipmap/icon")]
+        Icon = "@mipmap/icon",
+        Theme = "@style/PhotoLibraryTheme")]
     public class PhotoLibraryActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

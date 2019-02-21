@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
     
-    <style name="photo_library_theme">
+    <style name="PhotoLibraryTheme">
         <item name="android:windowNoTitle">true</item>
         <item name="android:colorPrimary">#3f51B5</item>
         <item name="android:statusBarColor">#ffffff</item>
         <item name="android:colorPrimaryDark">#303f9f</item>
     </style>
     
-    <style name="take_picture_button">
+    <style name="TakePictureButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#ffffff</item>
@@ -24,7 +24,7 @@
         <item name="android:text">@string/takePicture</item>
     </style>
     
-    <style name="choose_from_gallery_button">
+    <style name="ChooseFromGalleryButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#ffffff</item>
@@ -40,7 +40,7 @@
         <item name="android:text">@string/chooseFromGallery</item>
     </style>
     
-    <style name="photo_image_view">
+    <style name="PhotoImageView">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:scaleType">fitXY</item>

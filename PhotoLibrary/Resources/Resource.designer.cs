@@ -3000,6 +3000,15 @@ namespace PhotoLibrary
 			// aapt resource value: 0x7f08007e
 			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131230846;
 			
+			// aapt resource value: 0x7f080164
+			public const int ChooseFromGalleryButton = 2131231076;
+			
+			// aapt resource value: 0x7f080165
+			public const int PhotoImageView = 2131231077;
+			
+			// aapt resource value: 0x7f080162
+			public const int PhotoLibraryTheme = 2131231074;
+			
 			// aapt resource value: 0x7f08001e
 			public const int Platform_AppCompat = 2131230750;
 			
@@ -3083,6 +3092,9 @@ namespace PhotoLibrary
 			
 			// aapt resource value: 0x7f080038
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131230776;
+			
+			// aapt resource value: 0x7f080163
+			public const int TakePictureButton = 2131231075;
 			
 			// aapt resource value: 0x7f0800c7
 			public const int TextAppearance_AppCompat = 2131230919;
@@ -3572,18 +3584,6 @@ namespace PhotoLibrary
 			
 			// aapt resource value: 0x7f080160
 			public const int Widget_Compat_NotificationActionText = 2131231072;
-			
-			// aapt resource value: 0x7f080164
-			public const int choose_from_gallery_button = 2131231076;
-			
-			// aapt resource value: 0x7f080165
-			public const int photo_image_view = 2131231077;
-			
-			// aapt resource value: 0x7f080162
-			public const int photo_library_theme = 2131231074;
-			
-			// aapt resource value: 0x7f080163
-			public const int take_picture_button = 2131231075;
 			
 			static Style()
 			{
