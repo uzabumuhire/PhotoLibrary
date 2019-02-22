@@ -1,17 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-          android:versionCode="1" 
-          android:versionName="1.0" 
-          package="com.targserv.PhotoLibrary">
-    
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.targserv.PhotoLibrary">
 	<uses-sdk android:minSdkVersion="10" android:targetSdkVersion="28" />
-    
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
-	<application android:allowBackup="true" 
-                 android:icon="@mipmap/icon" 
-                 android:label="@string/app_name">
-    </application>
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<application android:allowBackup="true" android:icon="@mipmap/icon" android:label="@string/app_name">
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.targserv.PhotoLibrary.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+		</provider>
+	</application>
 </manifest>
