@@ -28,16 +28,14 @@ namespace PhotoLibrary
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "PhotoLibraryUI" layout resource
+            // Set view from the "PhotoLibraryUI" layout resource
             SetContentView(Resource.Layout.PhotoLibraryUI);
 
-            // Get our useCamera button from the layout resource,
-            // and attach an event to it
+            // Get takePicture button from the layout resource, and attach an event to it
             Button takePicture = FindViewById<Button>(Resource.Id.takePicture);
             takePicture.Click += TakePictureButton_Clicked;
 
-            // Get our chooseFromGallery button from the layout resource,
-            // and attach an event to it
+            // Get chooseFromGallery button from the layout resource, and attach an event to it
             Button chooseFromGallery = FindViewById<Button>(Resource.Id.chooseFromGallery);
             chooseFromGallery.Click += ChooseFromGalleryButton_Clicked;
         }
@@ -52,5 +50,16 @@ namespace PhotoLibrary
             throw new NotImplementedException();
         }
 
+        #region Shows a message dialog using the parameters specified
+        public void ShowMessageDialog(string title, string message)
+        {
+            var dialog = new AlertDialog.Builder(this);
+            var alert = dialog.Create();
+            alert.SetTitle(title);
+            alert.SetMessage(message);
+            alert.SetButton("OK", (c, ev) => CrossPermissions.Current.OpenAppSettings());
+            alert.Show();
+        }
+        #endregion
     }
 }
