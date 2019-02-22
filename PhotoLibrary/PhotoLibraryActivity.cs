@@ -50,6 +50,30 @@ namespace PhotoLibrary
             throw new NotImplementedException();
         }
 
+        #region Check for device camera and photo album permissions
+        public async Task<bool> CheckCameraAlbumPermissions()
+        {
+            // Determine if permissions to device camera and photo album are enabled
+            var deviceCameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            var deviceAlbumStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+
+            // Ask for the appropriate permissions if not enabled
+            if (deviceCameraStatus != PermissionStatus.Granted || deviceAlbumStatus != PermissionStatus.Granted)
+            {
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] {
+                    Permission.Camera,
+                    Permission.Storage
+                });
+
+                deviceCameraStatus = results[Permission.Camera];
+                deviceAlbumStatus = results[Permission.Storage];
+            }
+
+            // Check if we have access to the device camera and photo album
+            return (deviceCameraStatus == PermissionStatus.Granted && deviceAlbumStatus == PermissionStatus.Granted);
+        }
+        #endregion
+
         #region Shows a message dialog using the parameters specified
         public void ShowMessageDialog(string title, string message)
         {
