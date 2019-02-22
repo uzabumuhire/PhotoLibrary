@@ -40,15 +40,44 @@ namespace PhotoLibrary
             chooseFromGallery.Click += ChooseFromGalleryButton_Clicked;
         }
 
-        private void ChooseFromGalleryButton_Clicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void TakePictureButton_Clicked(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
+
+        #region Enable the user to choose a picture from the Android device gallery
+        async void ChooseFromGalleryButton_Clicked(object sender, EventArgs e)
+        {
+            //await CrossMedia.Current.Initialize();
+
+            // Check if choosing a photo is supported
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                // Display the message if choosing a photo is not supported
+                ShowMessageDialog("Not Supported", "Choosing a photo is not supported.");
+                return;
+            }
+
+            // Check if the appropriate permissions are enabled
+            if (!await Task.Run(() => CheckCameraAlbumPermissions()))
+            {
+                // Display the message if unable to gain access to the photo album
+                ShowMessageDialog("Permission Denied", "Unable to gain access to the Photo Album");
+                return;
+            }
+
+            // Pick a photo from the album
+            var imageFileName = await CrossMedia.Current.PickPhotoAsync();
+
+            // Get photo image view from the layout resource, and display the taken picture 
+            if (imageFileName != null)
+            {
+                ImageView photoImageView = FindViewById<ImageView>(Resource.Id.photoImageView);
+                photoImageView.SetImageURI(Android.Net.Uri.Parse(imageFileName.Path));
+            }
+
+        }
+        #endregion
 
         #region Check for device camera and photo album permissions
         public async Task<bool> CheckCameraAlbumPermissions()
