@@ -40,10 +40,44 @@ namespace PhotoLibrary
             chooseFromGallery.Click += ChooseFromGalleryButton_Clicked;
         }
 
-        private void TakePictureButton_Clicked(object sender, EventArgs e)
+        #region Enable the user to take a picture using Android device camera
+        public async void TakePictureButton_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await CrossMedia.Current.Initialize();
+
+            // Check if device has camera or taking a photo is supported
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                // Display message if device has no camera or taking a photo is not supported
+                ShowMessageDialog("Permission Denied", "Unable to gain access to the camera.");
+                return;
+            }
+
+            // Check if the appropriate permissions are enabled
+            if (!await Task.Run(() => CheckCameraAlbumPermissions()))
+            {
+                // Display mesage if we are unable to gain access to the camera
+                ShowMessageDialog("Permission Denied", "Unable to gain access to the camera");
+                return;
+            }
+
+            // Take a photo
+            var imageFilename = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions()
+            {
+                Name = $"{DateTime.UtcNow}.jgp",
+                DefaultCamera = CameraDevice.Rear,
+                PhotoSize = PhotoSize.Medium,
+                SaveToAlbum = true
+            });
+
+            if (imageFilename == null)
+                return;
+
+            // Get photo image view from the layout resource, and display the taken picture 
+            ImageView photoImageView = FindViewById<ImageView>(Resource.Id.photoImageView);
+            photoImageView.SetImageURI(Android.Net.Uri.Parse(imageFilename.Path));
         }
+        #endregion
 
         #region Enable the user to choose a picture from the Android device gallery
         async void ChooseFromGalleryButton_Clicked(object sender, EventArgs e)
